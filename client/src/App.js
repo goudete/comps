@@ -7,23 +7,33 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from "react-router-dom";
 
 import Home from "./pages/Home/Home";
+import Signup from "./pages/Signup/Signup";
+import Login from "./pages/Login/Login";
+import Profile from "./pages/Profile/Profile";
 
-import './App.css';
 
 function App() {
   return (
     <div>
       <Router>
-         <Switch>
-           <Route path="/">
-             <Home />
-           </Route>
-         </Switch>
-       </Router>
+        <Switch>
+        <Route exact path="/">
+            <Signup />
+          </Route>
+          <Route path="/login">
+            <Login />
+          </Route>
+          <Route path="/home">
+            <Home />
+          </Route>
+          <Route path="/profile">
+            <Profile />
+          </Route>
+        </Switch>
+      </Router>
     </div>
   );
 }
