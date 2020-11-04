@@ -17,11 +17,15 @@ from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers     # add this
 from bot import views                  # add this
+from rest_framework_jwt.views import obtain_jwt_token
 
-router = routers.DefaultRouter()                      # add this
-router.register(r'todos', views.TodoView, 'todo')     # add this
+
+router = routers.DefaultRouter()
+router.register(r'places', views.PlaceViewSet)
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include(router.urls))
+    path('', include(router.urls)),
+    path('token-auth/', obtain_jwt_token)
 ]

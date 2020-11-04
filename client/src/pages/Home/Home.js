@@ -4,7 +4,6 @@ import { ThemeProvider } from '@material-ui/styles';
 import Map from '../../components/Map/Map';
 import FriendBar from '../../components/FriendBar/FriendBar';
 import Navbar from '../../components/Navbar/Navbar';
-import { purple } from '@material-ui/core/colors';
 
 
 const theme = createMuiTheme({
